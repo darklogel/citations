@@ -2,9 +2,12 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/',method=["POST","GET"])
+@app.route('/', methods=['GET','POST'])
 def index():
-    return "hello world"
+    if request.method == 'GET':
+        return 'get request'
+    elif request.method == 'POST':
+        return 'hello post'
 
 @app.route('/hello/<name>')
 def hey(name):
