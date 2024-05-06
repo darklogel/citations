@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    {% if css_filename %}<link rel="stylesheet" href="{{ url_for('static', filename=css_filename) }}">{% endif %}
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+        </header>
+
+    <aside>
+        </aside>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        </footer>
+
+    
+</body>
+</html>
